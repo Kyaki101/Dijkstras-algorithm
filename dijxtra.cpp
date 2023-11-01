@@ -17,7 +17,6 @@ void dijxtra(adj & graph, int src, list & memo, int * vis){
     cola.push(src);
     while(!cola.empty()){
         temp = cola.top();
-        std::cout << temp << std::endl;
         tot_w = memo[temp];
         vis[temp] = 1;
         size = graph[temp].size();
