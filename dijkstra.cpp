@@ -4,7 +4,7 @@ typedef std::vector<int> list;
 typedef std::vector<std::vector<list> > adj;
 
 
-void dijxtra(adj & graph, int src, list & memo, int * vis){
+void dijkstra(adj & graph, int src, list & memo, int * vis){
     std::priority_queue<int, std::vector<int>, std::function<bool(int, int)>> cola(
         [&](int a, int b) {
             return memo[a] > memo[b];
@@ -51,7 +51,7 @@ int main(){
     }
     int vis[v];
     for(int i = 0; i < v ; i++)vis[i] = 0;
-    dijxtra(graph, src, memo, vis);
+    dijkstra(graph, src, memo, vis);
 
     for(int i : memo){
         std::cout << i << " ";
